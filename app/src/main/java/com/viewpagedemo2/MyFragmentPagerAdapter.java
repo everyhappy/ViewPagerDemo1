@@ -2,14 +2,15 @@ package com.viewpagedemo2;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 
 import java.util.ArrayList;
 
 /**
  * Created by huangkun on 2016/10/31.
  */
-public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
+//FragmentPagerAdapter
+public class MyFragmentPagerAdapter extends FragmentStatePagerAdapter {
     ArrayList<Fragment> list;
     public MyFragmentPagerAdapter(FragmentManager fm, ArrayList<Fragment> list) {
         super(fm);

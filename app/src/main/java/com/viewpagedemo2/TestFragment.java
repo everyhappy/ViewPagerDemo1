@@ -16,7 +16,7 @@ public class TestFragment extends Fragment {
     private String hello;// = "hello android";
     private String defaultHello = "default value";
 
-    static TestFragment newInstance(String s) {
+    public static TestFragment newInstance(String s) {
         TestFragment newFragment = new TestFragment();
         Bundle bundle = new Bundle();
         bundle.putString("hello", s);

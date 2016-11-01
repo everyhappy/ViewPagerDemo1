@@ -23,9 +23,9 @@ public class MainActivity extends FragmentActivity {
     private ArrayList<Fragment> fragmentList;
     private ImageView image;
     private TextView view1, view2, view3, view4;
-    private int currIndex;//当前页卡编号
-    private int bmpW;//横线图片宽度
-    private int offset;//图片移动的偏移量  offset
+    private int currIndex;
+    private int bmpW;
+    private int offset;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +33,7 @@ public class MainActivity extends FragmentActivity {
         InitTextView();
         InitImage();
         InitViewPager();
+
     }
 
     /*
@@ -88,19 +89,17 @@ public class MainActivity extends FragmentActivity {
     public void InitViewPager(){
         mPager = (ViewPager)findViewById(R.id.viewpager);
         fragmentList = new ArrayList<Fragment>();
-        Fragment btFragment= new ButtonFragment();
+        Fragment oneFragment= TestFragment.newInstance("this is one fragment");
         Fragment secondFragment = TestFragment.newInstance("this is second fragment");
         Fragment thirdFragment = TestFragment.newInstance("this is third fragment");
         Fragment fourthFragment = TestFragment.newInstance("this is fourth fragment");
-        fragmentList.add(btFragment);
+        fragmentList.add(oneFragment);
         fragmentList.add(secondFragment);
         fragmentList.add(thirdFragment);
         fragmentList.add(fourthFragment);
-
         //给ViewPager设置适配器
         mPager.setAdapter(new MyFragmentPagerAdapter(getSupportFragmentManager(), fragmentList));
         mPager.setCurrentItem(0);//设置当前显示标签页为第一页
-        //mPager.setOnPageChangeListener(new MyOnPageChangeListener());//页面变化时的监听器
         mPager.addOnPageChangeListener(new MyOnPageChangeListener());
     }
 
